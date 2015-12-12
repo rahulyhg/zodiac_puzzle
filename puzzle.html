@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Cuprum' rel='stylesheet' type='text/css'>
+
+    <!-- build:css assets/css/site.css -->
+    <link rel="stylesheet" href="bower_components/reset-css/reset.css"/>
+    <link rel="stylesheet" href="bower_components/nprogress/nprogress.css"/>
+    <link rel="stylesheet" href="assets/css/flaticon.css"/>
+    <link rel="stylesheet" href="assets/css/fontello.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <!-- endbuild -->
+
+    <title>Puzzle | Zodiac Puzzle</title>
+</head>
+<body>
+<div id="preload">
+    <img src="assets/img/bg.png"/>
+</div>
+<div class="preloader">
+    <div class="mask">
+    </div>
+    <div class="preloader-text">
+        <h1 class="preloader-text-line preloader-text-title preloader-text-line-1">Zodiac Puzzle</h1>
+        <p class="preloader-text-line preloader-text-line-2">Learn your zodiac sign and your Horoscope</p>
+        <div class="starter">
+            <div class="preloader-icon">
+                <div class="loading"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<audio autoplay loop>
+    <source src="assets/music/bg.mp3" type="audio/mpeg">
+</audio>
+
+<div class="page-wrapper">
+    <a class="logo" href="index.html"><h1>Zodiac</h1></a>
+
+    <div class="page-main">
+        <div id="canvas" class="canvas">
+            <div class="zodiac-meaning" id="zodiac-meaning"></div>
+            <canvas class="zodiac-canvas" id="zodiac-canvas" width="800" height="600"></canvas>
+
+            <div class="frame-planets" id="frame-planets"></div>
+        </div>
+    </div>
+
+    <div class="menu" id="menu">
+        <ul>
+            <li><a href="javascript:;" class="btn-characteristics">Characteristics & Talents</a></li>
+            <li><a href="javascript:;" class="btn-feed" data-type="today">Daily Horoscope</a></li>
+            <li><a href="javascript:;" class="btn-feed" data-type="week">Weekly Horoscope</a></li>
+            <li><a href="javascript:;" class="btn-feed" data-type="month">Monthly Horoscope</a></li>
+            <!--<li><a href="javascript:;" class="btn-sign">Sign Your Name</a></li>-->
+            <!--<li><a href="javascript:;" class="btn-share" id="btn-share">Share on Facebook</a></li>-->
+        </ul>
+    </div>
+
+    <div class="nav" id="nav">
+
+    </div>
+    <div class="zodiac-title" id="zodiac-title">
+
+    </div>
+</div>
+
+<div id="planets"></div>
+<div class="panel panel-detail" id="panel-detail">
+    <div class="panel-cnt"></div>
+    <div class="opt">
+        <a class="glyph-icon flaticon-cross97 close" href="javascript:;"></a>
+    </div>
+</div>
+<div class="panel panel-characteristics" id="panel-characteristics">
+    <div class="panel-cnt"></div>
+    <div class="opt">
+        <a class="glyph-icon flaticon-cross97 close" href="javascript:;"></a>
+    </div>
+</div>
+<div class="panel panel-sign" id="panel-sign">
+    <div class="panel-cnt"></div>
+    <div class="opt">
+        <a class="glyph-icon flaticon-tick2 submit" href="javascript:;"></a>
+        <a class="glyph-icon flaticon-cross97 close" href="javascript:;"></a>
+    </div>
+</div>
+<div class="panel confirm-window" id="confirm-window">
+    <div class="panel-cnt">
+        <div class="panel-main">
+            It looks like your zodiac is on the way. If you leave, your changes will be lost.</div>
+        </div>
+    <div class="opt">
+        <a class="glyph-icon flaticon-tick2 submit" href="javascript:;"></a>
+        <a class="glyph-icon flaticon-cross97 close" href="javascript:;"></a>
+    </div>
+</div>
+
+<div class="save-img-container" id="save-img-container">
+    <div class="container"></div>
+    <a class="glyph-icon flaticon-cross97 close" href="javascript:;"></a>
+    <div class="tip">Right-Click the image and choose "Save" to save the image file below.</div>
+</div>
+
+<!--Template Start-->
+<script type="text/html" id="tpl-detail-content">
+    <header class="panel-header">
+        <h3 class="title">{{data.sunsign}} {{word}} Horoscope</h3>
+    </header>
+    <div class="panel-main">
+        {{data.horoscope}}
+    </div>
+</script>
+<script type="text/html" id="tpl-characteristics">
+    <header class="panel-header">
+        <h3 class="title">{{data.sunsign}} characteristics & talents</h3>
+    </header>
+    <div class="panel-main">
+        {{#data.value}}
+    </div>
+</script>
+<script type="text/html" id="tpl-panel-sign">
+    <header class="panel-header">
+        <h3 class="title">Sign Your Name</h3>
+    </header>
+    <div class="panel-main">
+        <input type="text" placeholder="Sign Your Name Here"/>
+    </div>
+</script>
+<script type="text/html" id="tpl-nav">
+    <ul>
+        <li><span class="hand-swipe swipe-left"></span></li>
+        <li><span class="arrow arrow-left"></span></li>
+        {{each data}}
+        {{if $value.id == id}}
+        <li><a href="javascript:;" class="nav-item active" data-id="{{$value.id}}" style="background-image: url(assets/img/zodiac/{{$value.id}}_active.png)"></a> </li>
+        {{else}}
+        <li><a href="javascript:;" class="nav-item" data-id="{{$value.id}}" style="background-image: url(assets/img/zodiac/{{$value.id}}.png)"></a> </li>
+        {{/if}}
+        {{/each}}
+        <li><span class="arrow arrow-right"></span></li>
+        <li><span class="hand-swipe swipe-right"></span></li>
+    </ul>
+</script>
+<script type="text/html" id="tpl-zodiac-title">
+    <div class="zodiac-sign" style="background-image: url(assets/img/zodiac/{{data.id}}.png)"></div>
+    <div class="zodiac-info"><span class="sign-name">{{data.name}}</span><div class="zodiac-date">{{data.date}}</div></div>
+</script>
+<!--Template End-->
+
+<!-- build:js assets/js/plugins.js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/leapjs/leap-0.6.4.js"></script>
+<script src="bower_components/nprogress/nprogress.js"></script>
+<script src="bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="bower_components/artTemplate/dist/template.js"></script>
+<!-- endbuild -->
+<!-- build:js assets/js/main.js -->
+<script src="assets/js/elementsFromPoint.js"></script>
+<script src="assets/js/horoscope.js"></script>
+<script src="assets/js/puzzle.js"></script>
+<!-- endbuild -->
+</body>
+</html>

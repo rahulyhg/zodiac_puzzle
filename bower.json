@@ -1,0 +1,27 @@
+{
+  "name": "Zodiac Puzzle by Leap Motion",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Xiaoxue Zhang <xiaoxue.issue@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "leap-mouse": "*",
+    "leapjs": "~0.6.4",
+    "leapjs-plugins": "~0.1.11",
+    "three.js": "~0.73.0",
+    "threex.planets": "*",
+    "reset-css": "~2.0.2011012602"
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Cuprum' rel='stylesheet' type='text/css'>
+
+    <!-- build:css assets/css/site.css -->
+    <link rel="stylesheet" href="bower_components/reset-css/reset.css"/>
+    <link rel="stylesheet" href="assets/css/flaticon.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <!-- endbuild -->
+
+    <title>Zodiac Puzzle</title>
+</head>
+<body>
+<div class="preloader">
+    <div class="mask">
+    </div>
+    <div class="preloader-text">
+        <h1 class="preloader-text-line preloader-text-title preloader-text-line-1">Horoscope Puzzle</h1>
+        <p class="preloader-text-line preloader-text-line-2">Learn your zodiac sign and your daily Horoscope</p>
+        <div class="starter">
+            <div class="preloader-icon">
+                <div class="loading"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio autoplay loop>
+    <source src="assets/music/bg.mp3" type="audio/mpeg">
+</audio>
+<div class="page-wrapper">
+    <a class="logo" href="index.html"><h1>Zodiac</h1></a>
+
+    <div class="page-main">
+        <div class="zodiac-menu">
+            <h2 class="menu-title">
+                CHOOSE ZODIAC SIGN
+            </h2>
+            <ul>
+                <li class="menu-item" data-id="aries">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/aries.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Aries</h4>
+                    <p class="zodiac-component zodiac-time">Mar. 21 - April 19</p>
+                </li>
+                <li class="menu-item" data-id="taurus">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/taurus.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Taurus</h4>
+                    <p class="zodiac-component zodiac-time">April 20 - May 20</p>
+                </li>
+                <li class="menu-item" data-id="gemini">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/gemini.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Gemini</h4>
+                    <p class="zodiac-component zodiac-time">May 21 - June 21</p>
+                </li>
+                <li class="menu-item" data-id="cancer">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/cancer.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Cancer</h4>
+                    <p class="zodiac-component zodiac-time">June 22 - July 22</p>
+                </li>
+                <li class="menu-item" data-id="leo">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/leo.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Leo</h4>
+                    <p class="zodiac-component zodiac-time">July 23 - Aug. 22</p>
+                </li>
+                <li class="menu-item" data-id="virgo">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/virgo.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Virgo</h4>
+                    <p class="zodiac-component zodiac-time">Aug. 23 - Sept. 22</p>
+                </li>
+                <li class="menu-item" data-id="libra">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/libra.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Libra</h4>
+                    <p class="zodiac-component zodiac-time">Sept. 23 - Oct. 23</p>
+                </li>
+                <li class="menu-item" data-id="scorpio">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/scorpio.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Scorpio</h4>
+                    <p class="zodiac-component zodiac-time">Oct. 24 - Nov. 21</p>
+                </li>
+                <li class="menu-item" data-id="sagittarius">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/sagittarius.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Sagittarius</h4>
+                    <p class="zodiac-component zodiac-time">Nov. 22 - Dec. 21</p>
+                </li>
+                <li class="menu-item" data-id="capricorn">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/capricorn.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Capricorn</h4>
+                    <p class="zodiac-component zodiac-time">Dec. 22 - Jan. 19</p>
+                </li>
+                <li class="menu-item" data-id="aquarius">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/aquarius.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Aquarius</h4>
+                    <p class="zodiac-component zodiac-time">Jan. 20 - Feb. 18</p>
+                </li>
+                <li class="menu-item" data-id="pisces">
+                    <div class="zodiac-component zodiac-sign" style="background-image: url(assets/img/zodiac/pisces.png)"></div>
+                    <h4 class="zodiac-component zodiac-name">Pisces</h4>
+                    <p class="zodiac-component zodiac-time">Feb. 19 - Mar. 20</p>
+                </li>
+            </ul>
+        </div>
+        <!--<div class="clear"></div>-->
+    </div>
+
+    <!--<footer class="footer">
+    </footer>-->
+</div>
+
+<div class="panel panel-introduction" id="panel-introduction" style="display: block;">
+    <div class="panel-cnt">
+        <div class="panel-main">
+            <table>
+                <tr>
+                    <th><img src="assets/img/cursor/pinch.png" alt="pinch gesture"/></th>
+                    <td>Pinch to click or drag</td>
+                </tr>
+                <tr>
+                    <th><img src="assets/img/cursor/release.png" alt="spread gesture"/></th>
+                    <td>Spread to drop</td>
+                </tr>
+                <tr>
+                    <th><img src="assets/img/cursor/swipe_left.png" alt="swipe_left gesture"/></th>
+                    <td>Swipe left to switch to previous zodiacal sign</td>
+                </tr>
+                <tr>
+                    <th><img src="assets/img/cursor/swipe_right.png" alt="swipe_right gesture"/></th>
+                    <td>Swipe right to switch to next zodiacal sign</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="opt">
+        <a class="glyph-icon flaticon-cross97 close" href="javascript:;"></a>
+    </div>
+</div>
+
+<!-- build:js assets/js/plugins.js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/leapjs/leap-0.6.4.js"></script>
+<script src="bower_components/nprogress/nprogress.js"></script>
+<script src="bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<!-- endbuild -->
+<!-- build:js assets/js/main.js -->
+<script src="assets/js/main.js"></script>
+<!-- endbuild -->
+<script>
+    function init(){
+        $zodiacSign = $('.menu-item .zodiac-sign');
+        $zodiacSign.height($zodiacSign.width());
+
+        $zodiacMenu = $('.zodiac-menu');
+        $zodiacMenu.css({marginLeft: -$zodiacMenu.width()/2, marginTop: -$zodiacMenu.height()/2});
+
+        //hide preloading layer
+        $('#preload').imagesLoaded( function() {
+            $(".preloader").delay(200).fadeOut('slow');
+        });
+    }
+    init();
+</script>
+</body>
+</html>
